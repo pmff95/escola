@@ -136,10 +136,9 @@ public class ProfessorService {
 
 
     public <T> T findByUuid(UUID uuid, Class<T> clazz) {
-        Object usuario = this.professorRepository.findByUuid(uuid).orElseThrow(
-                () -> new EntityNotFoundException("Professor não encontrado"));
-
-        return clazz.cast(usuario);
+        return this.professorRepository
+                .findByUuid(uuid, clazz)
+                .orElseThrow(() -> new EntityNotFoundException("Professor não encontrado"));
     }
 
     public void changeStudentStatus(UUID uuid, Status status) {

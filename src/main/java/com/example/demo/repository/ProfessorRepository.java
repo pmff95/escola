@@ -7,6 +7,8 @@ import java.util.UUID;
 
 public interface ProfessorRepository extends BaseRepository<Professor, Long> {
 
+    <T> Optional<T> findByUuid(UUID uuid, Class<T> projectionClass);
+
     boolean existsByEmail(String email);
 
     Optional<Professor> findByUuid(UUID uuid);

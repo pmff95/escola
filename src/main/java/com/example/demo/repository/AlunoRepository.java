@@ -12,6 +12,8 @@ import com.example.demo.domain.model.Aluno;
 @Repository
 public interface AlunoRepository extends BaseRepository<Aluno, Long> {
 
+    <T> Optional<T> findByUuid(UUID uuid, Class<T> projectionClass);
+
     // @Query(value = """
     // SELECT EXISTS(
     //     SELECT 1
