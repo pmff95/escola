@@ -34,7 +34,7 @@ public class ProdutoController {
     @PreAuthorize("hasAnyRole('ADMIN', 'PDV')")
     @EurekaApiOperation(
             summary = "Criar um produto",
-            description = "Cria e persiste um novo produto contendo as informações especificadas na requisião."
+            description = "Cria e persiste um novo produto contendo as informações especificadas na requisição."
     )
     public ResponseEntity<ApiReturn<String>> criarProduto(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
@@ -51,7 +51,7 @@ public class ProdutoController {
     @PreAuthorize("hasRole('ADMIN')")
     @EurekaApiOperation(
             summary = "Atualizar um produto",
-            description = "Atualiza, a partir do seu UUID, um produto persistido com as informações especificadas na requisião."
+            description = "Atualiza, a partir do seu UUID, um produto persistido com as informações especificadas na requisição."
     )
     public ResponseEntity<ApiReturn<String>> atualizarProduto(
             @Parameter(description = "UUID do produto a ser atualizado", required = true)

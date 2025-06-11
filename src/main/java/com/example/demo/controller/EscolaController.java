@@ -79,7 +79,7 @@ public class EscolaController {
     @PreAuthorize("hasRole('MASTER')")
     @EurekaApiOperation(
             summary = "Criar uma escola",
-            description = "Cria e persiste uma nova escola contendo as informações especificadas na requisião."
+            description = "Cria e persiste uma nova escola contendo as informações especificadas na requisição."
     )
     public ResponseEntity<ApiReturn<String>> criarEscola(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
@@ -109,7 +109,7 @@ public class EscolaController {
     @PreAuthorize("hasRole('MASTER')")
     @EurekaApiOperation(
             summary = "Atualizar uma escola",
-            description = "Atualiza, a partir do seu UUID, uma escola persistida com as informações especificadas na requisião."
+            description = "Atualiza, a partir do seu UUID, uma escola persistida com as informações especificadas na requisição."
     )
     public ResponseEntity<ApiReturn<String>> atualizarEscola(
             @Parameter(description = "UUID da escola a ser buscada", required = true)
@@ -226,7 +226,7 @@ public class EscolaController {
 //    @PutMapping("params/{uuid}")
 //    @EurekaApiOperation(
 //            summary = "Atualizar os parametros de uma escola",
-//            description = "Atualiza, a partir do seu UUID, os parametros de uma escola persistida com as informações especificadas na requisião."
+//            description = "Atualiza, a partir do seu UUID, os parametros de uma escola persistida com as informações especificadas na requisição."
 //    )
 //    public ResponseEntity<ApiReturn<String>> atualizarParametrosEscola(
 //            @Parameter(description = "UUID da escola a ser buscada", required = true)

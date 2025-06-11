@@ -37,7 +37,7 @@ public class CategoriaController {
     @PreAuthorize("hasAnyRole('ADMIN', 'FUNCIONARIO')")
     @EurekaApiOperation(
             summary = "Criar uma categoria",
-            description = "Cria e persiste uma nova categoria contendo as informações especificadas na requisião."
+            description = "Cria e persiste uma nova categoria contendo as informações especificadas na requisição."
     )
     public ResponseEntity<ApiReturn<String>> criarCategoria(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
@@ -54,7 +54,7 @@ public class CategoriaController {
     @PreAuthorize("hasRole('MASTER')")
     @EurekaApiOperation(
             summary = "Atualizar uma categoria",
-            description = "Atualiza, a partir do seu UUID, uma categoria persistida com as informações especificadas na requisião."
+            description = "Atualiza, a partir do seu UUID, uma categoria persistida com as informações especificadas na requisição."
     )
     public ResponseEntity<ApiReturn<String>> atualizarCategoria(
             @Parameter(description = "UUID da categoria a ser atualizada", required = true)
