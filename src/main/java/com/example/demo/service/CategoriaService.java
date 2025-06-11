@@ -40,7 +40,7 @@ public class CategoriaService {
         UsuarioLogado usuarioLogado = SecurityUtils.getUsuarioLogado();
 
         categoria.setNome(categoriaRequest.nome());
-        categoria.getEscola().setId(usuarioLogado.getEscola().getId());
+        categoria.setEscola(usuarioLogado.getEscola());
         categoria.setStatus(Status.ATIVO);
 
         repository.save(categoria);
