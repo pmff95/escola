@@ -152,10 +152,9 @@ public class AlunoService {
     }
 
     public <T> T findByUuid(UUID uuid, Class<T> clazz) {
-        Object usuario = this.alunoRepository.findByUuid(uuid).orElseThrow(
-                () -> new EntityNotFoundException("Aluno não encontrado"));
-
-        return clazz.cast(usuario);
+        return this.alunoRepository
+                .findByUuid(uuid, clazz)
+                .orElseThrow(() -> new EntityNotFoundException("Aluno não encontrado"));
     }
 
     public void changeStudentStatus(UUID uuid, Status status) {

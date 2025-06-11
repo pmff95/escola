@@ -160,11 +160,9 @@ public class UsuarioService {
      * @return
      */
     public <T> T findByUuid(UUID uuid, Class<T> clazz) {
-
-        Object usuario = this.usuarioRepository.findByUuid(uuid).orElseThrow(
-                () -> EurekaException.ofNotFound("Usuario não encontrado."));
-
-        return clazz.cast(usuario);
+        return this.usuarioRepository
+                .findByUuid(uuid, clazz)
+                .orElseThrow(() -> EurekaException.ofNotFound("Usuario não encontrado."));
     }
 
     public Optional<UsuarioFull> findByEscolaIdAndPerfil(UUID escolaId, Perfil perfil) {

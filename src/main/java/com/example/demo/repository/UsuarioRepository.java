@@ -16,6 +16,8 @@ import com.example.demo.dto.projection.usuario.UsuarioFull;
 
 @Repository
 public interface UsuarioRepository extends BaseRepository<Usuario, Long> {
+
+    <T> Optional<T> findByUuid(UUID uuid, Class<T> projectionClass);
  
     /* Utilizado para o login */
     @Query("SELECT u FROM Usuario u LEFT JOIN FETCH u.escola WHERE u.email = :email and u.status = 'ATIVO'")
