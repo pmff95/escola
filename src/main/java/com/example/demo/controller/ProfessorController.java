@@ -38,7 +38,7 @@ public class ProfessorController {
         @PreAuthorize("hasAnyRole('MASTER','ADMIN','FUNCIONARIO')")
         @EurekaApiOperation(
                 summary = "Criar um professor",
-                description = "Cria e persiste um novo professor contendo as informações especificadas na requisião."
+                description = "Cria e persiste um novo professor contendo as informações especificadas na requisição."
         )
         public ResponseEntity<ApiReturn<UUID>> create(
                 @io.swagger.v3.oas.annotations.parameters.RequestBody(
@@ -56,7 +56,7 @@ public class ProfessorController {
     @PreAuthorize("hasAnyRole('MASTER','ADMIN','FUNCIONARIO','RESPONSAVEL','PROFESSOR')")
     @EurekaApiOperation(
             summary = "Atualizar um professor",
-            description = "Atualiza, a partir do seu UUID, um professor persistido com as informações especificadas na requisião."
+            description = "Atualiza, a partir do seu UUID, um professor persistido com as informações especificadas na requisição."
     )
     public ResponseEntity<ApiReturn<String>> update(
             @Parameter(description = "UUID do professor a ser atualizado", required = true)

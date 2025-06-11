@@ -50,7 +50,7 @@ public class UsuarioController {
     @PreAuthorize("hasAnyRole('MASTER','ADMIN','FUNCIONARIO')")
     @EurekaApiOperation(
             summary = "Criar um usuário",
-            description = "Cria e persiste um novo usuário contendo as informações especificadas na requisião."
+            description = "Cria e persiste um novo usuário contendo as informações especificadas na requisição."
     )
     public ResponseEntity<ApiReturn<UUID>> create(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
@@ -67,7 +67,7 @@ public class UsuarioController {
     @CheckAccess(entity = EntityNames.USUARIO)
     @EurekaApiOperation(
             summary = "Atualizar um usuário",
-            description = "Atualiza, a partir do seu UUID, um usuário persistido com as informações especificadas na requisião."
+            description = "Atualiza, a partir do seu UUID, um usuário persistido com as informações especificadas na requisição."
     )
     public ResponseEntity<ApiReturn<String>> update(
             @Parameter(description = "UUID do usuário a ser atualizado", required = true)
